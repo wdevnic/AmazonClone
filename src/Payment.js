@@ -7,6 +7,7 @@ import CurrencyFormat from 'react-currency-format'
 import './Payment.css'
 import {useStateValue} from './StateProvider'
 import CheckoutProduct from './CheckoutProduct'
+import {db} from './firebase'
 
 function Payment() {
 
@@ -51,6 +52,18 @@ function Payment() {
             payment_method: {
             card: elements.getElement(CardElement)}
         }).then(({paymentIntent}) => {
+            
+            db
+                .collection('users')
+                .doc(user?.uid)
+                .collection('orders')
+                .doc(paymentIntent.id)
+                .set({
+                    basket: basket,
+                    amount: paymentIntent.amount,
+                    created: paymentIntent.created
+                })
+            
             setSucceeded(true);
             setError(null);
             setProcessing(false)
