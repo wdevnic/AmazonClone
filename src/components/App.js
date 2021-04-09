@@ -1,22 +1,22 @@
 import React, {useEffect} from 'react';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {auth} from "../firebase";
+import {loadStripe} from '@stripe/stripe-js';
+import { Elements } from "@stripe/react-stripe-js";
+import { useStateValue } from '../stateManagement/StateProvider';
 import Header from './Header';
 import Home from './Home';
-import Checkout from './Checkout'
-import Login from './Login'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import {auth} from "./firebase"
-import { useStateValue } from './StateProvider';
-import Payment from './Payment'
-import {loadStripe} from '@stripe/stripe-js'
-import { Elements } from "@stripe/react-stripe-js"
-import Orders from './Orders'
+import Checkout from './Checkout';
+import Login from './Login';
+import Payment from './Payment';
+import Orders from './Orders';
+
 
 const promise= loadStripe('pk_test_51IdNv1Ki4CXRTBEHlJKKXwa2ntBdG2GHbNK5SEK2a5EBKcg7XIY8hM7aQyjENVnKjlqCwOwSBiTFRX9kY1O8SQTR00WKcfA777')
 
 function App() {
 
-  const[{}, dispatch] = useStateValue();
+  const[, dispatch] = useStateValue();
 
   useEffect(() => {
 
@@ -39,7 +39,7 @@ function App() {
   
   
   }) // listener for logout and login
-  }, [])
+  }, [dispatch])
 
   return (
 

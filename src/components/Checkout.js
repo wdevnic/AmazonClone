@@ -1,10 +1,9 @@
-import React, {forwardRef} from 'react'
-import "./Checkout.css"
-import { useStateValue } from './StateProvider'
-import Subtotal from "./Subtotal"
-import CheckoutProduct from './CheckoutProduct'
+import React from 'react';
 import FlipMove from 'react-flip-move';
-
+import { useStateValue } from '../stateManagement/StateProvider';
+import "../styles/Checkout.css";
+import Subtotal from "./Subtotal";
+import CheckoutProduct from './CheckoutProduct';
 
 
 
