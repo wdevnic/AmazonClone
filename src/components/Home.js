@@ -1,16 +1,16 @@
 import React from 'react'
 import Product from './Product'
+import ImageCarousel from './ImageCarousel'
 import "../styles/Home.css"
 
 function Home() {
+
+
     return (
         <div className="home">
             <div className="home__container">
-                <img 
-                    className="home__image"
-                    src="https://images-na.ssl-images-amazon.com/images/G/15/digital/video/merch/2021/TV/BRND/BRND_MTH21_00000_GWBleedingHero_3000x1200_Final_en-CA_FT_PVD6656._CB656951988_.jpg"
-                    alt="" />
-            
+           
+            <ImageCarousel />
 
             <div className="home__row">
                 <Product

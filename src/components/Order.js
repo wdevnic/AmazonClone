@@ -11,7 +11,7 @@ function Order({ order }) {
             <p>{moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}</p>
             
             <p className="order__id">
-                <small>{order.id}</small>
+                Id : <small>{order.id}</small>
             </p>
             {order.data.basket?.map(item => (
                 <CheckoutProduct key={item.id} {...item} hideButton={true}/>
