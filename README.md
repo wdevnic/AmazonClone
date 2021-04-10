@@ -17,7 +17,7 @@ https://clone-636ed.web.app/
 
 ## Technologies
 
-ReactJS, Firebase Services (Authentication, Storage and Hosting) as well as Stripe
+ReactJS, Firebase Services (Authentication, Storage and Hosting) as well as Stripe (test key)
 
 ## Status
 Adding more features
